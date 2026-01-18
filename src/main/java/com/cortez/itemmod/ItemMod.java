@@ -1,5 +1,6 @@
 package com.cortez.itemmod;
 
+import com.cortez.itemmod.item.RubyGem;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -43,7 +44,7 @@ public class ItemMod {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-
+        RubyGem.register(modEventBus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -62,7 +63,12 @@ public class ItemMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(RubyGem.RUBY);
+        }
+        else if(event.getTabKey() == CreativeModeTabs.COMBAT){
+            event.accept(RubyGem.RUBY_SWORD);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
