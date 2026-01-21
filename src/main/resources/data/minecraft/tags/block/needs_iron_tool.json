@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "itemmod:ruby_block",
+    "itemmod:ruby_ore_stone",
+    "itemmod:ruby_ore_deepslate"
+  ]
+}

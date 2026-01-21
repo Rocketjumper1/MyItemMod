@@ -1,10 +1,10 @@
 package com.cortez.itemmod;
 
+import com.cortez.itemmod.creativeModTabs.ModTabs;
 import com.cortez.itemmod.block.ModBlocks;
 import com.cortez.itemmod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -32,6 +32,8 @@ public class ItemMod {
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        // register creative mode tabs
+        ModTabs.register(modEventBus);
         // Register Ruby Block
         ModBlocks.register(modEventBus);
         // register ruby item
@@ -55,15 +57,6 @@ public class ItemMod {
     // Add added items to correct creative mode tabs
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.RUBY);
-        }
-        if(event.getTabKey() == CreativeModeTabs.COMBAT){
-            event.accept(ModItems.RUBY_SWORD);
-        }
-        if(event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS){
-            event.accept(ModBlocks.RUBY_BLOCK);
-        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

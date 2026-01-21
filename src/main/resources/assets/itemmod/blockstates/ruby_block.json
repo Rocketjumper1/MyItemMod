@@ -1,3 +1,8 @@
 {
-
+"variants": {
+  "":
+  {
+    "model": "itemmod:block/ruby_block"
+  }
+}
 }

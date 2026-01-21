@@ -1,4 +1,10 @@
 {
   "item.itemmod.ruby": "Ruby",
-  "item.itemmod.ruby_sword":  "Ruby Sword"
+  "item.itemmod.ruby_sword":  "Ruby Sword",
+  "block.itemmod.ruby_block": "Ruby Block",
+  "block.itemmod.ruby_slab": "Ruby Slab",
+  "block.itemmod.ruby_ore_deepslate": "Deepslate Ruby Ore",
+  "block.itemmod.ruby_ore_stone": "Ruby Ore",
+  "itemmod.creativetab.ruby.blocks": "Ruby Blocks",
+  "itemmod.creativetab.ruby.items": "Ruby Items"
 }

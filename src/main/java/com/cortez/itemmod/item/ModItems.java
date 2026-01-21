@@ -12,7 +12,7 @@ public class ModItems {
     public static final DeferredRegister<Item> Items = DeferredRegister.create(ForgeRegistries.ITEMS, ItemMod.MOD_ID);
     public static final RegistryObject<Item> RUBY = Items.register("ruby", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RUBY_SWORD = Items.register("ruby_sword", () -> new Item(new Item.Properties()));
-
+    public static final RegistryObject<Item> CHEESE = Items.register("cheese", () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus){
         Items.register(eventBus);
 
