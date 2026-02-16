@@ -30,13 +30,13 @@ public class pizzaRecipeEvent {
             trades.add((Entity entity, RandomSource random) -> {
                 ItemStack pizza_recipe = new ItemStack(Items.WRITTEN_BOOK);
                 List<Filterable<Component>> pages = List.of(
-                        Filterable.passThrough(Component.literal("Add one part cheese.")),
+                        Filterable.passThrough(Component.literal("Add 2 parts cheese.")),
                         Filterable.passThrough(Component.literal("Then After that mix 2 parts marinara sauce on top")),
-                        Filterable.passThrough(Component.literal("Finally add 2 parts cheese and dough"))
+                        Filterable.passThrough(Component.literal("Finally add 2 parts cheese and 3 parts dough"))
                         );
                 WrittenBookContent bookContent = new WrittenBookContent(
                         Filterable.passThrough("Pizza recipe"),
-                        "A mysterious pizza maker",
+                        "a mysterious pizza maker",
                         0,
                         pages,
                         true);

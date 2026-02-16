@@ -1,5 +1,6 @@
 package com.cortez.itemmod;
 
+import com.cortez.itemmod.ModSounds.ModSounds;
 import com.cortez.itemmod.creativeModTabs.ModTabs;
 import com.cortez.itemmod.block.ModBlocks;
 import com.cortez.itemmod.item.ModItems;
@@ -32,11 +33,13 @@ public class ItemMod {
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        // register custom sounds
+        ModSounds.register(modEventBus);
         // register creative mode tabs
         ModTabs.register(modEventBus);
         // Register Ruby Block
         ModBlocks.register(modEventBus);
-        // register ruby item
+        // register ruby items
         ModItems.register(modEventBus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

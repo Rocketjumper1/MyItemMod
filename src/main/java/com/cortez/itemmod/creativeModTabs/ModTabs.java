@@ -21,6 +21,8 @@ public class ModTabs {
             displayItems((ItemDisplayParameters, output) -> {
                 output.accept(ModItems.RUBY.get());
                 output.accept(ModItems.RUBY_SWORD.get());
+                output.accept(ModItems.RUBY_PICKAXE.get());
+                output.accept(ModItems.TOMATO_SEEDS.get());
 
             }).
             build());
@@ -42,8 +44,10 @@ public class ModTabs {
                         output.accept(ModBlocks.RUBY_BLOCK.get());
                         output.accept(ModBlocks.RUBY_ORE_DEEPSLATE.get());
                         output.accept(ModBlocks.RUBY_ORE_STONE.get());
+                        output.accept(ModBlocks.INCINERATOR_BLOCK.get());
                     }).
                     build());
+
     public static void register(IEventBus Bus){
         TABS.register(Bus);
     }
