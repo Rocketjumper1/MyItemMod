@@ -1,0 +1,7 @@
+// 1.21.1	2026-01-23T10:57:21.084177218	Loot Tables
+d170eaee3ed134203a3b6de0b4c065468d71b84c data/itemmod/loot_table/blocks/incinerator_block.json
+5e6887cd52820de52ca7b1a878b022bc210d80c1 data/itemmod/loot_table/blocks/ruby_block.json
+3f8ef81e1221c3e4c57151e6ff662dec10511811 data/itemmod/loot_table/blocks/ruby_ore_deepslate.json
+8572ef2289b0e4dada835afb4145da88f46e954d data/itemmod/loot_table/blocks/ruby_ore_stone.json
+8f5579337e9973f8aedde35e2d5b87d22de503ee data/itemmod/loot_table/blocks/ruby_slab.json
+e91706aaadda967f69da94d35c04ba5a9c721778 data/itemmod/loot_table/blocks/tomato_crop.json

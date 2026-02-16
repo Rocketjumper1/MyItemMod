@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "itemmod:block/incinerator_block"
+    }
+  }
+}
