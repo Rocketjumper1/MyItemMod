@@ -3,7 +3,9 @@ package com.cortez.itemmod.block.entity.custom;
 
 import com.cortez.itemmod.block.ModBlocks;
 import com.cortez.itemmod.block.entity.ModBlockEntitys;
+import com.cortez.itemmod.modSounds.ModSounds;
 import com.cortez.itemmod.screens.custom.IncineratorMenu;
+import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -11,6 +13,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -18,6 +21,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
@@ -54,6 +58,23 @@ public class IncineratorBlockEntity extends BlockEntity implements MenuProvider 
             drops.setItem(i, inventory.getStackInSlot(i));
         }
         Containers.dropContents(level, this.worldPosition, drops);
+    }
+    public static void tick(Level level, BlockPos pos, BlockState state, IncineratorBlockEntity blockEntity) {
+
+        if (!level.isClientSide) {
+            blockEntity.doServerTick(level, pos);
+        } else {
+        }
+    }
+
+    private void doServerTick(Level level, BlockPos pos) {
+        ItemStack itemStack = inventory.getStackInSlot(0);
+        if(!itemStack.isEmpty()){
+            itemStack.shrink(1);
+            level.playSound(null, pos, ModSounds.INCINERATOR_SOUND.get(), SoundSource.BLOCKS, 0.25f, 2f);
+
+        }
+
     }
     // Save/packet managing
     @Override

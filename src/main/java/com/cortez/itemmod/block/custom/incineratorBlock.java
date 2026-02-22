@@ -1,6 +1,7 @@
 package com.cortez.itemmod.block.custom;
 
 
+import com.cortez.itemmod.block.entity.ModBlockEntitys;
 import com.cortez.itemmod.modSounds.ModSounds;
 import com.cortez.itemmod.block.entity.custom.IncineratorBlockEntity;
 import com.cortez.itemmod.modTags.ModTags;
@@ -21,6 +22,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
@@ -44,6 +47,12 @@ public class incineratorBlock extends BaseEntityBlock {
     @Override
     protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
         return Codec;
+    }
+
+    @Override
+    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+        return createTickerHelper(pBlockEntityType, ModBlockEntitys.INCINERATOR_BE.get(),
+            (lvl, pos, state, be) -> IncineratorBlockEntity.tick(lvl, pos, state, be));
     }
 
     @Override
