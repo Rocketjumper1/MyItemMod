@@ -1,0 +1,5 @@
+// 1.21.1	2026-02-20T23:00:12.013999337	Tags for minecraft:item mod id vanilla
+be875c895e23e427dff8ba3101b1db4863f9155c data/itemmod/tags/item/range_enchantment_support.json
+2789e678406430746f1f1536b79a78fa17c54ee1 data/itemmod/tags/item/undestroyable_items.json
+543e337f0582347e158a335d4d88b3d5364e2fd1 data/minecraft/tags/item/pickaxes.json
+80511291e755e12a76297748491d26f6632bbfb3 data/minecraft/tags/item/swords.json

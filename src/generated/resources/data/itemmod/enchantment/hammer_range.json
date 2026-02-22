@@ -1,0 +1,32 @@
+{
+  "anvil_cost": 2,
+  "description": {
+    "translate": "enchantment.itemmod.hammer_range"
+  },
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "effect": {
+          "type": "itemmod:hammer_range_effect"
+        },
+        "enchanted": "attacker"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 10,
+    "per_level_above_first": 5
+  },
+  "max_level": 255,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 5
+  },
+  "primary_items": "#itemmod:range_enchantment_support",
+  "slots": [
+    "any"
+  ],
+  "supported_items": "#itemmod:range_enchantment_support",
+  "weight": 5
+}
