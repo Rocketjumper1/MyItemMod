@@ -2,6 +2,7 @@ package com.cortez.itemmod.item;
 
 import com.cortez.itemmod.ItemMod;
 import com.cortez.itemmod.block.ModBlocks;
+import com.cortez.itemmod.item.custom.RubyHammer;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,6 +21,15 @@ public class ModItems {
                     stacksTo(1).
                     durability(2056)
             ));
+    public static final RegistryObject<Item> RUBY_HAMMER = Items.register("ruby_hammer", () -> new RubyHammer(Tiers.NETHERITE,
+            new Item.Properties().attributes(DiggerItem.createAttributes(
+                    Tiers.NETHERITE,
+                    7,
+                    4
+            ))
+                    .rarity(Rarity.EPIC)
+                    .stacksTo(1)
+                    .durability(256)));
     public static final RegistryObject<Item> TOMATO_SEEDS = Items.register("tomato_seeds", () ->
             new ItemNameBlockItem(ModBlocks.TOMATO_CROP.get(), new Item.Properties()));
     public static final RegistryObject<Item> RUBY = Items.register("ruby", () -> new Item(new Item.Properties()));

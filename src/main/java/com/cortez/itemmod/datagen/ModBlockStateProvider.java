@@ -6,10 +6,12 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -25,8 +27,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.RUBY_BLOCK);
         blockWithItem(ModBlocks.RUBY_ORE_STONE);
-        simpleBlockWithItem(ModBlocks.RUBY_SLAB.get(), cubeAll(ModBlocks.RUBY_BLOCK.get()));
+        slabBlock((SlabBlock) ModBlocks.RUBY_SLAB.get(), modLoc("block/ruby_block"), modLoc("block/ruby_block"));
         blockWithItem(ModBlocks.RUBY_ORE_DEEPSLATE);
+        simpleBlockItem(ModBlocks.RUBY_SLAB.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/ruby_slab_top")));
         threeTextureBlock(ModBlocks.INCINERATOR_BLOCK, modLoc("block/incinerator_side"), modLoc("block/incinerator_bottom"), modLoc("block/incinerator_top"));
         makeCrop(((CropBlock) ModBlocks.TOMATO_CROP.get()), "tomato_stage", "tomato_stage");
 
@@ -42,12 +46,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
-        // 1. Get the current age of the block (0, 1, 2, etc.)
-        // By using block.getAgeProperty(), we don't need to know the specific class name
+
         IntegerProperty ageProperty = (IntegerProperty) state.getBlock().getStateDefinition().getProperty("age");
         int age = state.getValue(ageProperty);
 
-        // 2. Build the model and texture paths dynamically
+
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().crop(
                 modelName + age, // Model name (e.g., kohlrabi_stage0)

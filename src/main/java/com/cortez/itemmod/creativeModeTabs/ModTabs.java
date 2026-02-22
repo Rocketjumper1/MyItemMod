@@ -1,11 +1,10 @@
-package com.cortez.itemmod.creativeModTabs;
+package com.cortez.itemmod.creativeModeTabs;
 
 import com.cortez.itemmod.ItemMod;
 import com.cortez.itemmod.block.ModBlocks;
 import com.cortez.itemmod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.Display;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,13 +21,16 @@ public class ModTabs {
                 output.accept(ModItems.RUBY.get());
                 output.accept(ModItems.RUBY_SWORD.get());
                 output.accept(ModItems.RUBY_PICKAXE.get());
+                output.accept(ModItems.RUBY_HAMMER.get());
                 output.accept(ModItems.TOMATO_SEEDS.get());
+
+
 
             }).
             build());
     public static final RegistryObject<CreativeModeTab> COOKING = TABS.register("cooking_tab", () -> CreativeModeTab.builder()
             .withTabsAfter(RUBY_ITEMS.getId()).
-            icon(() -> new ItemStack(ModItems.CHEESE.get(), 5)).
+            icon(() -> new ItemStack(ModItems.CHEESE.get())).
             title(Component.translatable("itemmod.creativetab.cooking")).
             displayItems((CreativeModeTab.ItemDisplayParameters ItemDisplayParameters, CreativeModeTab.Output output) -> {
                 output.accept(ModItems.CHEESE.get());

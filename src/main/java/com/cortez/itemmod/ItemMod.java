@@ -1,11 +1,16 @@
 package com.cortez.itemmod;
 
-import com.cortez.itemmod.ModSounds.ModSounds;
-import com.cortez.itemmod.creativeModTabs.ModTabs;
+import com.cortez.itemmod.enchantment.ModEnchantmentEffects;
+import com.cortez.itemmod.modSounds.ModSounds;
+import com.cortez.itemmod.block.entity.ModBlockEntitys;
+import com.cortez.itemmod.creativeModeTabs.ModTabs;
 import com.cortez.itemmod.block.ModBlocks;
 import com.cortez.itemmod.item.ModItems;
+import com.cortez.itemmod.screens.ModMenuTypes;
+import com.cortez.itemmod.screens.custom.IncineratorScreen;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -41,8 +46,15 @@ public class ItemMod {
         ModBlocks.register(modEventBus);
         // register ruby items
         ModItems.register(modEventBus);
+        // Register Block Entities
+        ModBlockEntitys.register(modEventBus);
+        // Register Mod Menus
+        ModMenuTypes.register(modEventBus);
+        // Register Mod Enchantment
+        ModEnchantmentEffects.register(modEventBus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -76,8 +88,7 @@ public class ItemMod {
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            MenuScreens.register(ModMenuTypes.INCINERATOR_MENU.get(), IncineratorScreen::new);
         }
     }
 }

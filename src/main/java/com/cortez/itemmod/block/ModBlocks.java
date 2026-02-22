@@ -39,6 +39,7 @@ public class ModBlocks {
             .of()
             .strength(3f)
             .requiresCorrectToolForDrops()
+            .noOcclusion()
 
     ));
     public static final RegistryObject<Block> TOMATO_CROP = Block.register("tomato_crop", () -> new TomatoCrop(

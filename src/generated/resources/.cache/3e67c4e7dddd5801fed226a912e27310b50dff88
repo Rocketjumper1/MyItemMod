@@ -1,7 +1,8 @@
-// 1.21.1	2026-01-23T10:57:21.085933991	Item Models: itemmod
+// 1.21.1	2026-02-20T21:04:22.31690934	Item Models: itemmod
 fa8d7893092dec59d42b6637f47b959271a7e42b assets/itemmod/models/item/cheese.json
 57c2ea33e4788a02fae3d6cf4ede1a3852c6c6e7 assets/itemmod/models/item/ruby.json
-3b90f9956e55ff354ce2d1a41eb2de0407779a19 assets/itemmod/models/item/ruby_pickaxe.json
-8707f9987a79a8d5737552ae3bb9ac035af420a8 assets/itemmod/models/item/ruby_sword.json
+bae3c21bd47d99c501249cc8ea140c560486e9c7 assets/itemmod/models/item/ruby_hammer.json
+fb01e5bec79d0f481e9a508aa4e0790768cd3358 assets/itemmod/models/item/ruby_pickaxe.json
+cf9a81332e9bc12d642c8838d6e66fd795046db1 assets/itemmod/models/item/ruby_sword.json
 93b9e3e67dc769fc10ad31b23ff7604c332f3ee1 assets/itemmod/models/item/tomato.json
 d941ea642e1f2b1ce94b49c704413859374304b5 assets/itemmod/models/item/tomato_seeds.json
